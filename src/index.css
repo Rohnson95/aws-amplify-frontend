@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background: linear-gradient(180deg, rgb(117, 81, 194), rgb(255, 255, 255));
+  background: #121212; /* Solid dark background */
+  color: #ffffff; /* Default text color for dark mode */
   display: flex;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   height: 100vh;
@@ -22,14 +23,16 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #1f1f1f; /* Slightly lighter dark tone for buttons */
+  color: #ffffff; /* White text for buttons */
   cursor: pointer;
   transition: border-color 0.25s;
-  color: white;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: #646cff; /* Accent color on hover */
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -43,23 +46,29 @@ ul {
   display: flex;
   flex-direction: column;
   margin: 8px 0;
-  border: 1px solid black;
+  border: 1px solid #333333; /* Dark border for the list */
   gap: 1px;
-  background-color: black;
+  background-color: #1f1f1f; /* Dark background for the list */
   border-radius: 8px;
   overflow: auto;
 }
 
 li {
-  background-color: white;
+  background-color: #333333; /* Slightly lighter tone for list items */
   padding: 8px;
+  color: #ffffff; /* White text for list items */
 }
 
 li:hover {
-  background: #dadbf9;
+  background: #444444; /* Dark hover effect for list items */
 }
 
 a {
   font-weight: 800;
   text-decoration: none;
+  color: #64cfff; /* Accent color for links */
+}
+
+a:hover {
+  color: #91e1ff; /* Lighter accent color on hover */
 }
