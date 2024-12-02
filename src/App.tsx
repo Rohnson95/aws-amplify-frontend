@@ -306,9 +306,9 @@ function App() {
         </TableBody>
       </Table>
       */}
-
+      <div className="graph-container">
       <Line options={chartOptions} data={cartData}></Line>
-
+      </div>
       <Divider padding="xs" />
       <button onClick={signOut}>Sign out</button>
     </main >

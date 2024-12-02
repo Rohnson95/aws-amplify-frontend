@@ -2,18 +2,28 @@ body {
   margin: 0;
   background: #121212; /* Solid dark background */
   color: #ffffff; /* Default text color for dark mode */
-  display: flex;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   height: 100vh;
   width: 100vw;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding: 16px; /* Add padding for breathing space */
+  overflow-y: auto; /* Allow vertical scrolling if content exceeds viewport */
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding doesn't increase width/height */
+}
+
+h3, h1 {
+  margin: 16px 0;
+  text-align: center;
 }
 
 button {
@@ -38,6 +48,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Adjust card styles */
+.card {
+  margin-bottom: 16px;
+}
+
+/* List styling */
 ul {
   padding-inline-start: 0;
   margin-block-start: 0;
@@ -71,4 +87,16 @@ a {
 
 a:hover {
   color: #91e1ff; /* Lighter accent color on hover */
+}
+.graph-container {
+  width: 80%; /* Set the width of the graph container */
+  max-width: 600px; /* Add a maximum width */
+  height: 300px; /* Set the height of the graph */
+  margin: 16px auto; /* Center the graph container with auto margins */
+  overflow: hidden; /* Ensure no overflow issues */
+  border: 1px solid #333333; /* Optional: Add a border for clarity */
+  border-radius: 8px; /* Add rounded corners */
+  background-color: #1f1f1f; /* Match the background color */
+  padding: 16px; /* Add padding for breathing room */
+  box-sizing: border-box; /* Ensure padding doesn't increase the dimensions */
 }
