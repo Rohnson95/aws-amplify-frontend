@@ -16,7 +16,7 @@ const schema = a.schema({
       timestamp: a.timestamp().required(),
       temperature: a.float(),
       humidity: a.float(),
-      owner: a.string().required(),
+      owner: a.string(),
     })
     .identifier(['device_id', 'timestamp'])
     .authorization((allow) => [allow.owner(), allow.publicApiKey()]),
@@ -28,7 +28,7 @@ const schema = a.schema({
       timestamp: a.timestamp().required(),
       temperature: a.float(),
       humidity: a.float(),
-      owner: a.string().required()
+      owner: a.string(),
     }
     )
     .returns(a.ref("telemetry"))
@@ -38,7 +38,7 @@ const schema = a.schema({
   devices: a
     .model({
       device_id: a.string().required(),
-      owner: a.string().required(),
+      owner: a.string(),
       status: a.string(),
     })
     .identifier(['device_id'])
