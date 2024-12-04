@@ -76,19 +76,6 @@ function App() {
     client.models.telemetry.delete({ device_id, timestamp })
   }
 
-  function createTelemetry() {
-    const temperature = Math.random() * (30 - 20) + 20;
-    const humidity = Math.random() * (90 - 40) + 40;
-
-    client.models.telemetry.create({
-      device_id: "1234",
-      timestamp: new Date().getTime(),
-      temperature: temperature,
-      humidity: humidity,
-      owner: user.userId,
-    });
-  }
-
   const chartOptions = {
 
     onClick: function (evt: any, element: string | any[]) {
@@ -261,17 +248,6 @@ function App() {
 
       <Divider padding="xs" />
       <h3>Telemetry</h3>
-      {
-        <Button
-          variation="primary"
-          loadingText=""
-          onClick={createTelemetry}
-          backgroundColor={'#cdc5c5'}
-          color='#333333'
-        >
-          Create new Telemetry record
-        </Button>
-      }
 
       {/*
       <Table
