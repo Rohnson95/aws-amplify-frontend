@@ -113,30 +113,26 @@ function App() {
     },
   };
 
-
+  const recentTelemetries = telemetries.slice(-10);
   const cartData = {
-    labels: telemetries.map((data) => {
+    labels: recentTelemetries.map((data) => {
       return moment(data?.timestamp).format("HH:mm:ss");
     }),
     datasets: [
       {
         label: 'Temperature',
-        data: telemetries.map((data) => {
-          return data?.temperature;
-        }),
+        data: recentTelemetries.map((data) => data?.temperature),
         borderColor: 'rgb(182, 46, 75)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
         yAxisID: 'y',
       },
       {
         label: 'Humidity',
-        data: telemetries.map((data) => {
-          return data?.humidity;
-        }),
+        data: recentTelemetries.map((data) => data?.humidity),
         borderColor: 'rgb(27, 65, 255)',
         backgroundColor: 'rgba(18, 132, 231, 0.5)',
         yAxisID: 'y1',
-      }
+      },
     ],
   };
 
@@ -154,13 +150,13 @@ function App() {
         level={5}
         color='#c3c3c3'
          >
-        Temperature: {telemetries[telemetries.length - 1]?.temperature}
+        Temperature: {recentTelemetries[recentTelemetries.length - 1]?.temperature}
       </Heading>
       <Heading
         width='30vw'
         level={5}
         color='#c3c3c3' >
-        Humidity: {telemetries[telemetries.length - 1]?.humidity}
+        Humidity: {recentTelemetries[recentTelemetries.length - 1]?.humidity}
       </Heading>
 
 
